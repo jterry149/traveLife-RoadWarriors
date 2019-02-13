@@ -7,7 +7,8 @@ const path = require('path');
 const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
 const posts = require("./routes/api/posts");
-
+// Variable to set the port
+const port = process.env.PORT || 5000;
 // Variable initialized for express
 const app = express();
 
@@ -19,12 +20,10 @@ app.use(express.json())
 const db = require('./config/keys').MONGOLAB_ROSE_URI;
 
 // Connect to MongoDB
-mongoose.connect(db, {useNewUrlParser: true});
-mongoose.connection.once('open', function(){
-      console.log('Connection has been made!');
-}).on('error', function(error){
-        console.log('Error is: ', error);
-});
+// Connect to MongoDB
+mongoose.connect(db, { useNewUrlParser: true })
+    .then(() => console.log("mongoDB connected"))
+    .catch(err => console.log(err));;
   
 // Passport middleware 
 app.use(passport.initialize());
@@ -49,9 +48,6 @@ if (process.env.NODE_ENV === 'production')
       res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 };
-  
-// Variable to set the port
-const port = process.env.PORT || 5000;
 
 // Listening handler to listen to servver
 app.listen(port,() => console.log(`Server running on port ${port} `));
