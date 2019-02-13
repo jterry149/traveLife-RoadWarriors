@@ -1,0 +1,47 @@
+{
+  "name": "off-grid",
+  "version": "1.0.0",
+  "description": "An off-grid travel and informational application",
+  "main": "server.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jterry149/off-grid.git"
+  },
+  "keywords": [
+    "travel",
+    "off",
+    "grid",
+    "rv",
+    "van"
+  ],
+  "author": "Jessica Terry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jterry149/off-grid/issues"
+  },
+  "homepage": "https://github.com/jterry149/off-grid#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4",
+    "gravatar": "^1.8.0",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.5",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "path": "^0.12.7",
+    "validator": "^10.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
