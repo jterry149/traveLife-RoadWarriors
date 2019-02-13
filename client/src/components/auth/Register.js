@@ -109,11 +109,12 @@ class Register extends Component {
                     type="submit"
                     className="btn blue-gradient btn-info btn-block btn-rounded z-depth-1a"
                 >Submit </MDBBtn>
+                </form>
                 <div className="font-small grey-text d-flex justify-content-end">
                         
                         Have an account?{" "}<p onClick={this.openOtherModal} className="blue-text ml-1 font-weight-bold"> Sign In{" "}</p>
                         </div>
-                </form>
+                
                     
                     </MDBModalBody>
                     <MDBModalFooter>

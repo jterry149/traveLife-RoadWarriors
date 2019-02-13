@@ -17,7 +17,7 @@ import PrivateRoute from './components/common/PrivateRoute';
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Journey from "./pages/Journey";
-//import  News from "./pages/News";
+import  News from "./pages/News";
 import  Resources from "./pages/Resources";
 
 // Required Component Files 
@@ -34,6 +34,7 @@ import Profile from './components/profile/Profile';
 import Posts from './components/posts/Posts';
 import Post from './components/post/Post';
 import NotFound from './components/Not-Found/NotFound';
+
 
 // Imported styles sheet
 import "./styles.css";
@@ -69,16 +70,16 @@ class App extends Component {
           <div className="App">
             <Navbar/>
             <Route exact path="/" component={Home} />
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/map" component={Journey} />
-              {/* <Route exact path="/news" component={News} /> */}
-              <Route exact path="/resources" component={Resources} /> */}
-            <div className="container">
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} /> 
-              <Route exact path="/profiles" component={Profiles} /> 
-              <Route exact path="/profile/:handle" component={Profile} /> 
+                <Route path="/home" component={Home} />
+                <Route exact path="/about" component={About} />
+                <Route exact path="/map" component={Journey} />
+                <Route exact path="/news" component={News} /> 
+                <Route exact path="/resources" component={Resources} />
+                <div className="container">
+                <Route exact path="/register" component={Register} />
+                <Route exact path="/login" component={Login} /> 
+                <Route exact path="/profiles" component={Profiles} /> 
+                <Route exact path="/profile/:handle" component={Profile} /> 
               <Switch>
                   <PrivateRoute exact path="/dashboard" component= {Dashboard} />
               </Switch> 
@@ -103,9 +104,9 @@ class App extends Component {
                 <PrivateRoute exact path="/post/:id" component={Post} />
               </Switch> 
               <Route exact path="/not-found" component={NotFound} /> 
-            </div>
+              </div>
             <Footer />
-          </div>
+            </div>
         </Router>
       </Provider>
     );

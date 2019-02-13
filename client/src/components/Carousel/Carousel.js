@@ -1,109 +1,36 @@
-import React, { Component } from "react";
-import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
-"mdbreact";
-
-const coffeeImage = require("../../images/coffee.png");
-const vanImage = require("../../images/van.png");
-const truckImage = require("../../images/truck.png");
-const rvImage = require("../../images/rv.png");
-
-const items = [
-  {
-    src: coffeeImage,
-  },
-  {
-    src: vanImage,
-  },
-  {
-    src: rvImage,
-  },
-  {
-    src: truckImage
-  }
-];
+import React, {Component} from "react";
+import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBContainer, MDBCol, MDBRow } from "mdbreact";
 
 class Carousel extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { activeIndex: 0 };
-    this.next = this.next.bind(this);
-    this.previous = this.previous.bind(this);
-    this.goToIndex = this.goToIndex.bind(this);
-    this.onExiting = this.onExiting.bind(this);
-    this.onExited = this.onExited.bind(this);
-  }
-
-  onExiting() {
-    this.animating = true;
-  }
-
-  onExited() {
-    this.animating = false;
-  }
-
-  next() {
-    if (this.animating) return;
-    const nextIndex =
-      this.state.activeIndex === items.length - 1
-        ? 0
-        : this.state.activeIndex + 1;
-    this.setState({ activeIndex: nextIndex });
-  }
-
-  previous() {
-    if (this.animating) return;
-    const nextIndex =
-      this.state.activeIndex === 0
-        ? items.length - 1
-        : this.state.activeIndex - 1;
-    this.setState({ activeIndex: nextIndex });
-  }
-
-  goToIndex(newIndex) {
-    if (this.animating) return;
-    this.setState({ activeIndex: newIndex });
-  }
-
-  render() {
-    const { activeIndex } = this.state;
-
-    const slides = items.map(item => {
-      return (
-        <CarouselItem
-          onExiting={this.onExiting}
-          onExited={this.onExited}
-          key={item.src}
-        >
-          <img src={item.src} alt={item.altText} />
-        </CarouselItem>
-      );
-    });
-
-    return (
-      <Carousel
-        activeIndex={activeIndex}
-        next={this.next}
-        previous={this.previous}
-      >
-        <CarouselIndicators
-          items={items}
-          activeIndex={activeIndex}
-          onClickHandler={this.goToIndex}
-        />
-        {slides}
-        <CarouselControl
-          direction="prev"
-          directionText="Previous"
-          onClickHandler={this.previous}
-        />
-        <CarouselControl
-          direction="next"
-          directionText="Next"
-          onClickHandler={this.next}
-        />
-      </Carousel>
-    );
-  }
+  render(){
+  return (
+    <MDBContainer className=" mt-4">
+      <MDBRow>
+        <MDBCol md="12">
+          <MDBCarousel activeItem={1} length={3} showControls={true} showIndicators={true} className="z-depth-1">
+            <MDBCarouselInner>
+              <MDBCarouselItem itemId="1">
+                <video className="video-fluid d-block" autoPlay loop>
+                  <source src="https://mdbootstrap.com/img/video/Tropical.mp4" type="video/mp4" />
+                </video>
+              </MDBCarouselItem>
+              <MDBCarouselItem itemId="2">
+                <video className="video-fluid d-block" autoPlay loop>
+                  <source src="https://mdbootstrap.com/img/video/forest.mp4" type="video/mp4" />
+                </video>
+              </MDBCarouselItem>
+              <MDBCarouselItem itemId="3">
+                <video className="video-fluid d-block" autoPlay loop>
+                  <source src="https://mdbootstrap.com/img/video/Agua-natural.mp4" type="video/mp4" />
+                </video>
+              </MDBCarouselItem>
+            </MDBCarouselInner>
+          </MDBCarousel>
+        </MDBCol>
+      </MDBRow>
+    </MDBContainer>
+  );
+}
 }
 
 export default Carousel;

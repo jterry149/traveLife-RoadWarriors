@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
-  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, 
+  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse
 } from "mdbreact";
 import { BrowserRouter as Router } from 'react-router-dom';
 // Required Files
@@ -10,19 +10,17 @@ import { logoutUser } from '../../actions/authActions';
 import { clearCurrentProfile } from '../../actions/profileActions';
 import Login from '../auth/Login';
 import Signup from '../auth/Register';
-import Logo from '../../Images/logo_combo_small.png';
+import Logo from '../../images/logo_combo_small.png';
 
 class Navbar extends Component {
-  constructor() {
-    super();
-    this.state = {
+
+    state = {
       collapse: false,
-      isWideEnough: false,
-      loginModal: false,
-      signupModal: false,
-    };
-    this.onClick = this.onClick.bind(this);
-  }
+      loginModal:false,
+      signupModal:false
+    }
+  
+ 
   // Model login
   toggleLoginModal = () => {
     this.setState({
@@ -58,7 +56,7 @@ class Navbar extends Component {
   render() {
     // Object to check if user is authenticated
     const { isAuthenticated, user } = this.props.auth;
-
+    
     // Authenticated Links
     const authLinks = (
       <MDBNavbarNav>
@@ -92,24 +90,26 @@ class Navbar extends Component {
     );
     // Guest user links
     const guestLinks = (
+      
       <MDBNavbarNav>
         <MDBNavItem >
-          <MDBNavLink to="/register"  onClick={() => this.toggleSignupModal()}>Sign-Up</MDBNavLink>
+          <MDBNavLink to="/register" onClick={()=> this.toggleSignupModal()} >Sign-up</MDBNavLink>
         </MDBNavItem>
-        <MDBNavItem>
-          <MDBNavLink to="/login"  onClick={() => this.toggleLoginModal()}>Login</MDBNavLink>
+        <MDBNavItem>  
+          <MDBNavLink to="/login" onClick={()=> this.toggleLoginModal()}>Login</MDBNavLink>
         </MDBNavItem>
       </MDBNavbarNav>
     );
 
     // Return Navbar
-    return (
+    return (   
+          
           <Router>
             <MDBNavbar color="indigo darken-4" dark expand="md" fixed="top">
-              <MDBNavbarBrand href="/">
-                <img src={Logo} alt="logo"style={{ width: 250, marginTop: -7 }} />
+              <MDBNavbarBrand className="logo" href="/">
+                <img src={Logo} alt="logo" />
               </MDBNavbarBrand>
-                {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
+                <MDBNavbarToggler onClick={this.onClick} />
                 <MDBCollapse isOpen={this.state.collapse} navbar>
                   <MDBNavbarNav left>
                     <MDBNavItem active>
@@ -128,25 +128,23 @@ class Navbar extends Component {
                       <MDBNavLink to="/resources">Resources</MDBNavLink>
                     </MDBNavItem>
                     <MDBNavItem>
-                      <MDBNavLink to="/profiles">{' '}Community</MDBNavLink>
+                      <MDBNavLink to="/profiles">{' '}Community
+                      </MDBNavLink>
                     </MDBNavItem>
                   </MDBNavbarNav>
                   <MDBNavbarNav right>
-                    <MDBNavItem>
-                        <Login modal={this.state.loginModal}
-                        toggle={this.toggleLoginModal}
-                        toggleOtherModal={this.toggleSignupModal}/>
-                    </MDBNavItem>
-                    <MDBNavItem>
-                        <Signup
-                          modal={this.state.signupModal}
-                          toggle={this.toggleSignupModal}
-                          toggleOtherModal={this.toggleLoginModal}
+                  <Signup
+                      modal={this.state.signupModal}
+                      toggle={this.toggleSignupModal}
+                      toggleOtherModal={this.toggleLoginModal}
                       />
-                  </MDBNavItem> 
+                  <Login 
+                      modal= {this.state.loginModal}
+                      toggle={this.toggleLoginModal}
+                      toggleOtherModal={this.toggleSignupModal}
+                      />
                   {isAuthenticated ? authLinks : guestLinks}
                 </MDBNavbarNav>
-               
               </MDBCollapse>
             </MDBNavbar>
           </Router>

@@ -1,15 +1,17 @@
 // Required Dependencies and Files
-import React from "react";
-import { MDBJumbotron, MDBContainer } from "mdbreact";
+import React, { Component } from "react";
+import { MDBContainer,MDBJumbotron } from "mdbreact";
 import Logo from "../images/logo_combo.png";
 
 import Shield from "../images/shield.png";
 
 
 
-const About = () => {
+class About extends Component {
+    render(){
     return (
-        <MDBJumbotron fluid className="text-center jumbotron">
+
+            <MDBJumbotron fluid className="text-center jumbotron aboutus">
 
             <MDBContainer className="aboutus">
                 <h1>About Us</h1>
@@ -20,14 +22,18 @@ const About = () => {
                 <p>Whatever path you choose, we can help you brave it!</p>
 
 
-                <a class="nav-link Ripple-parent active" aria-current="page" href="/">
+                <a className="nav-link Ripple-parent active" aria-current="page" href="/">
                     <p>Get Started Now</p>
                     <img src={Shield} style={{ width: 100 }} alt="shield" />
                     <img src={Logo} style={{ width: 300 }} alt="logo" /></a>
+
             </MDBContainer>
         </MDBJumbotron >
     );
 }
+
+}
+
 
 // Export the About
 export default About;

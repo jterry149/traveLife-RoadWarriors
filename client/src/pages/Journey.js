@@ -1,15 +1,15 @@
 // Required Dependencies and Files
-import React from "react";
+import React, {Component} from "react";
 import Map from '../components/Map/Maps';
 
-const Journey= () => {
-    return(
-        <div className='Site'>
-            <div className='Content'>
+class Journey extends Component {
+  render(){
+  return(
+            <div className='map'>
               <Map/>
             </div>
-      </div>  
     );
+  }
 }
 
 

@@ -1,39 +1,30 @@
 @import url("https://fonts.googleapis.com/css?family=EB+Garamond");
-
-.jumbotron {
-  background: url('./images/road.png'); 
+html, body{
+  background: url('./images/road.png')no-repeat center center fixed; 
   background-size: cover;
-  background-position: center;
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 25px;
-  text-shadow:2px 2px #000000;
 }
 body {
   font-family: "EB Garamond", serif;
   text-align: right;
+
 }
 
 img {
   width:100%;
 }
-.Site {
- display: flex;
- flex-direction: column;
- min-height: 100vh;
+
+.jumbotron {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #1c1c1c;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 0px;
+  
 }
-.Site-content {
- flex: 1 0 auto;
- padding: var( — space) var( — space) 0;
- width: 100%;
- height: 60px;
-}
-.Site-content:after {
-  content: ‘\00a0’;
-  display: block;
-  margin-top: var( — space);
-  height: 0;
-  visibility: hidden;
+.home {
+  margin-top:10px;
+  font-weight: bold;
+  font-size: 20px; 
 }
 
 .fa-lg {
@@ -44,4 +35,22 @@ img {
   background-color: rgba(255, 255, 255, 0.8);
   color: #1c1c1c;
   text-shadow: none;
+  margin-top:100px;
+}
+.card {
+  margin:20px;
+}
+.carousel {
+  margin-bottom: 20px;
+}
+.logo{
+  width: 125px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.map {
+  margin: 50px;
 }
