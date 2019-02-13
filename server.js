@@ -19,10 +19,13 @@ app.use(express.json())
 const db = require('./config/keys').MONGO_URI;
 
 // Connect to MongoDB
-mongoose.connect(db, { useNewUrlParser: true })
-    .then(() => console.log("mongoDB connected"))
-    .catch(err => console.log(err));;
-    
+mongoose.connect(db, {useNewUrlParser: true});
+mongoose.connection.once('open', function(){
+      console.log('Conection has been made!');
+}).on('error', function(error){
+        console.log('Error is: ', error);
+});
+  
 // Passport middleware 
 app.use(passport.initialize());
 
