@@ -34,10 +34,9 @@ import Profile from './components/profile/Profile';
 import Posts from './components/posts/Posts';
 import Post from './components/post/Post';
 import NotFound from './components/Not-Found/NotFound';
-
-
 // Imported styles sheet
 import "./styles.css";
+require('dotenv').config();
 
 // Check for token for our user
 if (localStorage.jwtToken) {
