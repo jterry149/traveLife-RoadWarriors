@@ -9,7 +9,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { logoutUser } from '../../actions/authActions';
 import { clearCurrentProfile } from '../../actions/profileActions';
 import Login from '../auth/Login';
-import Signup from '../auth/Register'
+import Signup from '../auth/Register';
+import Logo from '../../Images/logo_combo_small.png';
 
 class Navbar extends Component {
   constructor() {
@@ -106,7 +107,7 @@ class Navbar extends Component {
           <Router>
             <MDBNavbar color="indigo darken-4" dark expand="md" fixed="top">
               <MDBNavbarBrand href="/">
-                <strong className="white-text">TraveLife Road Warriors</strong>
+                <img src={Logo} alt="logo"style={{ width: 250, marginTop: -7 }} />
               </MDBNavbarBrand>
                 {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
                 <MDBCollapse isOpen={this.state.collapse} navbar>

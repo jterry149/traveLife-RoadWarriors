@@ -10,6 +10,7 @@ import {
 } from "mdbreact";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 // Required Files
 import { loginUser } from "../../actions/authActions";
@@ -156,4 +157,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { loginUser }
-)(Login);
+)(withRouter(Login));
