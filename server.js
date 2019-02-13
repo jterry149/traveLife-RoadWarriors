@@ -3,7 +3,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const path = require('path');
-require("dotenv").config();
 // Required files
 const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
@@ -17,12 +16,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 
 // Datbase Config
-const db = process.env.MONGODB_URI_ROSE || "mongodb://localhost/todos";
+const db = require('./config/keys').MONGOLAB_ROSE_URI;
 
 // Connect to MongoDB
 mongoose.connect(db, {useNewUrlParser: true});
 mongoose.connection.once('open', function(){
-      console.log('Conection has been made!');
+      console.log('Connection has been made!');
 }).on('error', function(error){
         console.log('Error is: ', error);
 });
