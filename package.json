@@ -25,9 +25,9 @@
   "author": "Jessica Terry",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jterry149/traveLife-RoadWarriorsissues"
+    "url": "https://github.com/jterry149/traveLife-RoadWarriors/issues"
   },
-  "homepage": "https://github.com/jterry149/traveLife-RoadWarriors#readme",
+  "homepage": "https://github.com/jterry149/traveLife-RoadWarriors/#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
