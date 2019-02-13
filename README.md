@@ -8,25 +8,51 @@
 
 ## TECHNOLOGIES USED
     - Client-Side
-        * React
-        * MDBBootstrap
-        * Redux
-        * 
+        * axios
+        * bootstrap
+        * classnames
+        " dotenv
+        * google-maps-react
+        * jwt-decode
+        * mdbreact
+        * moment
+        * prop-types
+        * react
+        * react-bootstrap
+        * react-dom
+        * react-redux
+        * react-router-dom
+        * react-scripts
+        * reactstrap 
+        * redux
+        * redux-thunk
     - Server-Side
         * Nodejs
-        * MongoDB
-        * Express
-        * Passport.js
-        * Validator
-        * JWT Webtokens
+        * bcryptjs
+        * body-parser
+        * concurrently
+        * express
+        * gravatar
+        * jsonwebtoken
+        * mongoose
+        * passport
+        * passport-jwt
+        * path
+        * validator
+    - Database
+        * mongodb
+    - API Incorporations
+        * Google Maps API
+        * News API
+        * YouTube API
     
 
 ## TEAM MEMBERS AND RESPONSIBILITIES
 
-    - Jessica Terry: Project Manager/
-    - Rebecca Baker
-    - Oscar Juma
-    - Ivan Ramirez
+    - Jessica Terry: Project Manager/Database/ServerSide/Deployment
+    - Rebecca Baker: Front-end/UI
+    - Oscar Juma: Google Maps API/react maps component
+    - Ivan Ramirez: News API/react news component
 
 ## PROJECT DEMO
-[Demo Here](https://off-grid1.herokuapp.com/)
+[Demo Here](https://travlife-road-warriors.herokuapp.com/)
