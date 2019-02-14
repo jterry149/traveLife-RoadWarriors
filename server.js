@@ -8,7 +8,7 @@ const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
 const posts = require("./routes/api/posts");
 // Variable to set the port
-const port = process.env.PORT || 5000;
+
 // Variable initialized for express
 const app = express();
 
@@ -49,7 +49,10 @@ if (process.env.NODE_ENV === 'production')
     });
 };
 
+const port = process.env.PORT || 5001;
 // Listening handler to listen to servver
-app.listen(port,() => console.log(`Server running on port ${port} `));
+app.listen(port , function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
 
 
