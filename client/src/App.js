@@ -71,7 +71,6 @@ class App extends Component {
             <Navbar/>
             <Wrapper>
                 <Route exact path="/" component={Home} />
-            <div className="container">
                 <Route exact path="/home" component={Home} />
                 <Route exact path="/about" component={About} />
                 <Route exact path="/map" component={Journey} />
@@ -104,7 +103,6 @@ class App extends Component {
               <Switch>
                 <PrivateRoute exact path="/post/:id" component={Post} />
               </Switch> 
-                </div>
               <Route exact path="/not-found" component={NotFound} /> 
               </Wrapper>
             <Footer />
