@@ -70,9 +70,9 @@ class App extends Component {
           <div className="App">
             <Navbar/>
             <Wrapper>
-            <Route exact path="/" component={Home} />
+                <Route exact path="/" component={Home} />
             <div className="container">
-                <Route path="/home" component={Home} />
+                <Route exact path="/home" component={Home} />
                 <Route exact path="/about" component={About} />
                 <Route exact path="/map" component={Journey} />
                 <Route exact path="/news" component={News} /> 
