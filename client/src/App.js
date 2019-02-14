@@ -67,14 +67,17 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
+          <header>
             <Navbar/>
+          </header>
+            <Wrapper>
             <Route exact path="/" component={Home} />
+            <div className="container">
                 <Route path="/home" component={Home} />
                 <Route exact path="/about" component={About} />
                 <Route exact path="/map" component={Journey} />
                 <Route exact path="/news" component={News} /> 
                 <Route exact path="/resources" component={Resources} />
-                <div className="container">
                 <Route exact path="/register" component={Register} />
                 <Route exact path="/login" component={Login} /> 
                 <Route exact path="/profiles" component={Profiles} /> 
@@ -102,8 +105,9 @@ class App extends Component {
               <Switch>
                 <PrivateRoute exact path="/post/:id" component={Post} />
               </Switch> 
+                </div>
               <Route exact path="/not-found" component={NotFound} /> 
-              </div>
+              </Wrapper>
             <Footer />
             </div>
         </Router>

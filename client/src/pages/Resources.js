@@ -1,12 +1,13 @@
 // Required Dependencies and Files
 import React, {Component} from "react";
-import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardGroup, MDBRow, MDBContainer } from 'mdbreact';
+import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardGroup, MDBRow, MDBContainer, MDBCol } from 'mdbreact';
 
 class Resources extends Component {
 	render() {
 	return (
-		<div>
-		<MDBContainer>
+		<MDBContainer >
+		<MDBRow md="12cd">
+		<MDBCol>
         <MDBCardGroup>
 			<MDBRow>
 				<MDBCard style={{ width: "22rem" }}>
@@ -117,8 +118,9 @@ class Resources extends Component {
 
 			</MDBRow>
 		</MDBCardGroup>
+		</MDBCol>
+		</MDBRow>
 		</MDBContainer>
-		</div>
     );
 }
 }

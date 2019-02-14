@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 
 // Datbase Config
-const db = require('./config/keys').MONGOLAB_ROSE_URI;
+const db = require('./config/keys').MONGODB_URI;
 
 // Connect to MongoDB
 // Connect to MongoDB
