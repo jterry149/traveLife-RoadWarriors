@@ -1,5 +1,5 @@
 // Export the security keys
 module.exports = {
-    MONGO_URI: process.env.MONGO_URI,
+    MONGODB_URI: process.env.MONGODB_URI,
     secretOrKey: process.env.SECRET_OR_KEY
 };

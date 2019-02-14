@@ -17,7 +17,7 @@ import PrivateRoute from './components/common/PrivateRoute';
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Journey from "./pages/Journey";
-import  News from "./pages/News";
+import  News from "./components/News/News";
 import  Resources from "./pages/Resources";
 
 // Required Component Files 
@@ -34,6 +34,7 @@ import Profile from './components/profile/Profile';
 import Posts from './components/posts/Posts';
 import Post from './components/post/Post';
 import NotFound from './components/Not-Found/NotFound';
+import Wrapper from './components/Wrapper/index'
 // Imported styles sheet
 import "./styles.css";
 require('dotenv').config();
@@ -67,9 +68,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-          <header>
             <Navbar/>
-          </header>
             <Wrapper>
             <Route exact path="/" component={Home} />
             <div className="container">

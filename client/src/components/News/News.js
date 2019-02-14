@@ -1,11 +1,8 @@
 import React, {Component} from "react";
 import {  MDBRow, MDBCol, MDBCard, MDBCardBody, MDBMask, MDBIcon, MDBView } from "mdbreact";
 
-import React from "react";
-import {  MDBRow, MDBCol, MDBCard, MDBCardBody, MDBMask, MDBIcon, MDBView } from "mdbreact";
-
-const FeaturesPage = () => {
-
+class NewsPage extends Component {
+render(){
   return (
     <MDBCard
         className="my-5 px-5 mx-auto"
@@ -296,5 +293,6 @@ const FeaturesPage = () => {
         </MDBCardBody>
       </MDBCard>
   );
+  }
 }
-export default FeaturesPage; 
+export default NewsPage; 

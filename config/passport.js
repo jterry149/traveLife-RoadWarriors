@@ -12,7 +12,7 @@ const opts = {};
 
 // Grab our keys and our Bearer Token needed for authentication
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
-opts.secretOrKey = keys.secretOrKey;
+opts.secretOrKey = keys.SECRET_OR_KEY;
 
 module.exports = passport => {
     passport.use(
