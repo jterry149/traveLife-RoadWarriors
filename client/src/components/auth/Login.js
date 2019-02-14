@@ -154,7 +154,4 @@ const mapStateToProps = state => ({
 });
 
 // Export the Login
-export default connect(
-  mapStateToProps,
-  { loginUser }
-)(withRouter(Login));
+export default connect(mapStateToProps, { loginUser })(Login);
