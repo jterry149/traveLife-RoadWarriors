@@ -148,8 +148,8 @@ Login.propTypes = {
 
 // Build our mapStateToProps
 const mapStateToProps = state => ({
-  auth: state.auth,
-  errors: state.errors
+  auth: this.state.auth,
+  errors: this.state.errors
 });
 
 // Export the Login

@@ -144,4 +144,4 @@ const mapStateToProps = state => ({
 });
 
 // Export the signup
-export default connect(mapStateToProps, { registerUser })(withRouter(Register));
+export default withRouter(connect(mapStateToProps, { registerUser })(Register));
