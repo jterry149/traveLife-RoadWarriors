@@ -9,8 +9,7 @@ import { GET_ERRORS, SET_CURRENT_USER } from './types';
 // A function to register the user into the database
 export const registerUser = (userData, history) => 
 dispatch => {
-    axios
-        .post('/api/users/register', userData)
+    axios.post('/api/users/register', userData)
         .then(res => history.push('/login'))
         .catch(err =>
             dispatch({
