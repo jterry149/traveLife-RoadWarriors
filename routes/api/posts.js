@@ -8,7 +8,7 @@ const Post = require('../../models/Post');
 
 // Load the Profile Model
 const Profile = require('../../models/Profile');
-const validatePostInput =('../../validation/posts')
+const validatePostInput =('../../validation/post')
 // Route:       GET api/posts/test
 // Description: Tests post route
 // Access:      Public
@@ -20,11 +20,9 @@ router.get('/test', (req, res) => res.json({ msg: "Posts works just fine" }));
 router.get('/', (req, res) => {
     // Find all the posts
     Post.find()
-        
-    
-        .sort({ date: - 1 })
+        .sort({ date: -1 })
         .then(posts => res.json(posts))
-        .catch(err => res.status(404).json({ nopostsfound: 'No posts found'}));
+        .catch(err => res.status(404).json({ nopostsfound: 'No posts found' }));
 });
 
 // Route:       GET api/posts/:id
@@ -83,7 +81,7 @@ router.delete('/:id', passport.authenticate('jwt', { session: false }), (req, re
 // Route:       Post api/posts/like/:id
 // Description: Like posts by the user id 
 // Access:      Private
-router.post('/like/:id', passport.authenticate('jwt', {session: false }), (req, res) => {
+router.post('/like/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
     // Find the profile by user id and like the post 
     Profile.findOne({ user: req.user.id }).then(profile => {
         Post.findById( req.params.id)

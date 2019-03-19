@@ -2,11 +2,8 @@
 import React, { Component } from "react";
 import {
   MDBContainer,
-  MDBModal,
-  MDBModalBody,
-  MDBModalHeader,
-  MDBModalFooter,
-
+  MDBRow,
+  MDBCol
 } from "mdbreact";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -14,15 +11,16 @@ import { connect } from 'react-redux';
 // Required Files
 import { loginUser } from "../../actions/authActions";
 import TextFieldGroup from "../common/TextFieldGroup";
-import "./styles.css";
+
+
 
 class Login extends Component {
   constructor() {
     super();
     this.state = {
-      email: "",
-      password: "",
-      errors: {},
+      email: '',
+      password: '',
+      errors: {}
     };
 
     this.onChange = this.onChange.bind(this);
@@ -50,8 +48,8 @@ class Login extends Component {
   }
 
   // Event handler for onSubmit
-  onSubmit(event) {
-    event.preventDefault();
+  onSubmit(e) {
+    e.preventDefault();
 
     // Variable object for the user
     const userData = {
@@ -65,28 +63,25 @@ class Login extends Component {
     console.log(userData);
   }
   // Event handler for onChange
-  onChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
   }
 
-  // Open model
-  openOtherModal = () => {
-    this.props.toggleOtherModal();
-    this.props.toggle();
-  };
+  // // Open model
+  // openOtherModal = () => {
+  //   this.props.toggleOtherModal();
+  //   this.props.toggle();
+  // };
 
   render() {
     // Object state to handle errors
     const { errors } = this.state;
     return (
-      <div className="login">
-      <MDBContainer>
-        <MDBModal isOpen={this.props.modal} toggle={this.props.toggle}>
-          <MDBModalHeader className="text-center" toggle={this.props.toggle}>
-            Sign In
-          </MDBModalHeader>
-          <MDBModalBody className="modal-body mx-4">
-            {/* <!--Body--> */}
+      <MDBContainer className="login">
+        <h1 className="text-center"><strong>Sign In</strong></h1>
+        <h3 className="text-center"><strong>To Your TraveLife Road Warriors</strong></h3>
+        <MDBRow>
+          <MDBCol>
             <form onSubmit={this.onSubmit}>
               <TextFieldGroup
                 placeholder="Email Address"
@@ -96,6 +91,7 @@ class Login extends Component {
                 onChange={this.onChange}
                 error={errors.email}
               />
+
               <TextFieldGroup
                 placeholder="Password"
                 name="password"
@@ -104,41 +100,33 @@ class Login extends Component {
                 onChange={this.onChange}
                 error={errors.password}
               />
-              <input
-                type="submit"
-                className="btn blue-gradient btn-info btn-block btn-rounded z-depth-1a"
-              />
-            </form>
 
+                <input
+                    type="submit"
+                    className="btn blue-gradient btn-info btn-block btn-rounded z-depth-1a"
+                />
+
+            </form>
             <div className="text-center mb-3">
-              <p className="font-small blue-text d-flex justify-content-end">
+              <p className="font-small grey-text d-flex justify-content-end">
                 <a href="!#" className="blue-text ml-1">
-                  Forgot Password?{" "}
+                  Forgot Password?
                 </a>
               </p>
             </div>
             <div className="font-small grey-text d-flex justify-content-end">
-                Not a member?{" "}
-              <p
-                onClick={this.openOtherModal}
-                className="blue-text ml-1 font-weight-bold"
-              >
-                Sign Up{" "}
-              </p>
+            Not a member? 
+              <p><a href="/register">
+                Sign Up
+              </a></p>
             </div>
-          </MDBModalBody>
-          <MDBModalFooter>
-            <MDBContainer>
-              &copy; {new Date().getFullYear()} Copyright:{" "}
-              <a href="/home"> TraveLife Road Warriors</a>
-            </MDBContainer>
-          </MDBModalFooter>
-        </MDBModal>
-      </MDBContainer>
-      </div>
+          </MDBCol>
+          </MDBRow>
+          </MDBContainer>
     );
   }
 }
+        
 // Set up object PropsTypes for the Login
 Login.propTypes = {
   loginUser: PropTypes.func.isRequired,
@@ -148,8 +136,8 @@ Login.propTypes = {
 
 // Build our mapStateToProps
 const mapStateToProps = state => ({
-  auth: this.state.auth,
-  errors: this.state.errors
+  auth: state.auth,
+  errors: state.errors
 });
 
 // Export the Login

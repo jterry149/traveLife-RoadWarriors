@@ -19,7 +19,8 @@ const ProfileSchema = new Schema({
     bio: {
         type: String
     },
-    vehicle: [{  
+    vehicle: [
+    {  
         make: {
             type: String,
             required:true
@@ -32,7 +33,8 @@ const ProfileSchema = new Schema({
             type:String,
             required: true
         }
-    }],    
+    }
+    ],    
     social: {
         youtube: {
             type: String

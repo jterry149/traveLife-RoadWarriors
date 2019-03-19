@@ -1,6 +1,5 @@
 // Required dependencies
 import axios from 'axios';
-
 // Required Files
 import setAuthToken from '../utils/setAuthToken';
 import jwt_decode from 'jwt-decode';
@@ -20,7 +19,7 @@ dispatch => {
 };
 
 // A function to login and get the user token from api
-export const loginUser = userData => dispatch => {
+export const loginUser = (userData) => dispatch => {
     axios.post('/api/users/login', userData)
         .then(res => {
             // Variable used to save response to the local storage

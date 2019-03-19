@@ -54,5 +54,10 @@
     - Oscar Juma: Google Maps API/react maps component
     - Ivan Ramirez: News API/react news component
 
+## Group Repo 
+Here is the working repo the group used for the project. This repo was used to work on ideas for the components the application needed. Then we transfered the finalized components into this final repo. 
+
+[Group Repo](https://github.com/jterry149/off-grid)
+
 ## PROJECT DEMO
 [Demo Here](https://travlife-road-warriors.herokuapp.com/)

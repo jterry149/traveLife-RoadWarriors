@@ -70,12 +70,13 @@ class App extends Component {
           <div className="App">
             <Navbar/>
             <Wrapper>
+              <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/home" component={Home} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/map" component={Journey} />
-                <Route exact path="/news" component={News} /> 
-                <Route exact path="/resources" component={Resources} />
+                <Route path="/about" component={About} />
+                <Route path="/map" component={Journey} />
+                <Route path="/news" component={News} /> 
+                <Route path="/resources" component={Resources} />
                 <Route exact path="/register" component={Register} />
                 <Route exact path="/login" component={Login} /> 
                 <Route exact path="/profiles" component={Profiles} /> 
@@ -103,7 +104,8 @@ class App extends Component {
               <Switch>
                 <PrivateRoute exact path="/post/:id" component={Post} />
               </Switch> 
-              <Route exact path="/not-found" component={NotFound} /> 
+              <Route path="/not-found" component={NotFound} /> 
+              </Switch>
               </Wrapper>
             <Footer />
             </div>

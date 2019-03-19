@@ -17,7 +17,7 @@ const User = require('../../models/User');
 // Route:       GET api/users/test
 // Description: Tests users route functioning
 // Access:      Public
-router.get('/usersTest', (req, res) => res.json({ msg: "Users test works" }));
+router.get('/test', (req, res) => res.json({ msg: "Users test works" }));
 
 // Route:       POST api/users/register
 // Description: Register user and POST to the database
@@ -83,7 +83,7 @@ router.post('/login', (req, res) => {
     const password = req.body.password;
     
     // Find the user by email address
-    User.findOne({email}).then(user => 
+    User.findOne({ email }).then(user => 
     {
         // If statement to check for user if not found then return not found
         if(!user)

@@ -19,10 +19,10 @@ module.exports = passport => {
         new JwtStrategy(opts, (jwt_payload, done) => {
         // Find the user by the id
         User.findById(jwt_payload.id)
-            .then(User => {
+            .then(user => {
                 // If the user is found return the user
-                if(User){
-                    return done(null, User);
+                if (user) {
+                    return done(null, user);
                 }
                 // If the user is not found return false
                 return done(null, false);

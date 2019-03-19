@@ -38,3 +38,6 @@
   background-size: cover;
   background-position: center;
 }
+.login, .register {
+  background: white;
+}
