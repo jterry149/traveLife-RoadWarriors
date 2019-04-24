@@ -77,8 +77,8 @@ class App extends Component {
                 <Route path="/map" component={Journey} />
                 <Route path="/news" component={News} /> 
                 <Route path="/resources" component={Resources} />
-                <Route exact path="/register" component={Register} />
-                <Route exact path="/login" component={Login} /> 
+                <Route exact path="/api/users/register" component={Register} />
+                <Route exact path="/api/users/login" component={Login} /> 
                 <Route exact path="/profiles" component={Profiles} /> 
                 <Route exact path="/profile/:handle" component={Profile} /> 
               <Switch>

@@ -22,7 +22,7 @@ router.get('/test', (req, res) => res.json({ msg: "Users test works" }));
 // Route:       POST api/users/register
 // Description: Register user and POST to the database
 // Access:      Public
-router.post('/register', (req, res) => {
+router.post('/api/users/register', (req, res) => {
     // Object to bring in our errors
     const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -69,7 +69,7 @@ router.post('/register', (req, res) => {
 // Route:       POST api/users/login
 // Description: Login user then return Json Web tokens
 // Access:      Public
-router.post('/login', (req, res) => {
+router.post('/api/users/login', (req, res) => {
     // Object to bring in our errors
     const { errors, isValid } = validateLoginInput(req.body);
 
@@ -127,7 +127,7 @@ router.post('/login', (req, res) => {
 // Route:       Get api/users/current
 // Description: Current user then return their data
 // Access:      Private
-router.get('/current', passport.authenticate('jwt', { session: false }), (req,res) => {
+router.get('/api/users/current', passport.authenticate('jwt', { session: false }), (req,res) => {
     // Sends back a Json object of data to user for the application
     res.json({
         id: req.user.id,
